@@ -7,14 +7,26 @@
     android:background="@color/black"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/btn_open"
+        android:text="Open Second Activity"
+        android:layout_margin="16dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:paddingHorizontal="44dp"
+
         app:layout_constraintBottom_toTopOf="@id/container"
         app:layout_constraintTop_toTopOf="parent"
 
-        >
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp">
+
 
         <TextView
             android:id="@+id/text_view"

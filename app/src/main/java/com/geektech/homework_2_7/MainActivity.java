@@ -3,8 +3,11 @@ package com.geektech.homework_2_7;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,12 +17,29 @@ public class MainActivity extends AppCompatActivity {
     private boolean isOperationClick;
     private String operation;
     private Integer result;
+    private Button openButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textField = findViewById(R.id.text_view);
+        openButton =  findViewById(R.id.btn_open);
+
+
+        openButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                intent.putExtra("key1",textField.getText().toString());
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
+
     }
 
     public void onNumberClick(View view) {
@@ -130,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.btn_equal:
 
+                openButton.setVisibility(View.VISIBLE);
                 secondNumber = Integer.valueOf(textField.getText().toString());
                 // 33=12+21
 

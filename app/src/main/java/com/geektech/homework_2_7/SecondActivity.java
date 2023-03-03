@@ -21,7 +21,9 @@ public class SecondActivity extends AppCompatActivity {
       findViewById(R.id.btn_button).setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
+
               finish();
+              moveTaskToBack(true);
           }
       });
 

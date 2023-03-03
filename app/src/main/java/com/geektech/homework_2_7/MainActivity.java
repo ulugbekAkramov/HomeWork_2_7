@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                 intent.putExtra("key1",textField.getText().toString());
                 startActivity(intent);
-                finish();
+
             }
         });
 
